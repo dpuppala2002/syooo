@@ -1,0 +1,5 @@
+Test case 1: Generate a message, encrypt it, and send it to the server. Verify that the message is received by the server and decrypted correctly.
+Test case 2: Generate a batch of messages, encrypt them, and send them to the server. Verify that all of the messages are received by the server and decrypted correctly.
+Test case 3: Generate a message with a large payload, encrypt it, and send it to the server. Verify that the message is received by the server and decrypted correctly.
+Test case 4: Generate a message with invalid characters, encrypt it, and try to send it to the server. Verify that the server rejects the message.
+Test case 5: Generate a message, encrypt it, and try to send it to a non-existent server. Verify that the client receives an error message.

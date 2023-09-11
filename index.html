@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Real-time Data Stream</title>
+</head>
+<body>
+
+<div id="messages"></div>
+<div id="success-rate"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/socket.io@4.5.3"></script>
+<script>
+const socket = io("localhost:5000");
+
+socket.on("messages", (messages) => {
+  const messagesElement = document.getElementById("messages");
+  messagesElement.innerHTML = "";
+
+  for (const message of messages) {
+    const messageElement = document.createElement("div");
+    messageElement.innerText = JSON.stringify(message);
+    messagesElement.appendChild(messageElement);
+  }
+});
+
+socket.on("success-rate", (successRate) => {
+  const successRateElement = document.getElementById("success-rate");
+  successRateElement.innerText = `Success rate: ${successRate}`;
+});
+</script>
+
+</body>
+</html>
